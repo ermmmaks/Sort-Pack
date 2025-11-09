@@ -1,4 +1,4 @@
-from src.bubble_sort import bubble_sort
+from sort_pack.bubble_sort import bubble_sort
 from conftest import random  # noqa F401
 import pytest
 
