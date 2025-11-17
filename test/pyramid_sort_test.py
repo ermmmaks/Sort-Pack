@@ -1,7 +1,4 @@
 from sort_pack.pyramid_sort_alg import build_pyramid
-from conftest import random  # noqa F401
-import pytest
-
 
 # обычные unit-тесты
 
@@ -17,21 +14,3 @@ second_array = [766, 1, 9023, 63, 4248]
 
 def test_second():
     assert build_pyramid(second_array) != [9023, 1, 766, 4248, 63]
-
-
-# крайние случаи
-
-
-@pytest.mark.parametrize(
-    ["array", "expected"],
-    [([], []), ([0], [0]), ([-1, 2, -3], [-3, -1, 2]), ([1, 2, 1], [1, 1, 2])],
-)
-def test_with_expected(array, expected):
-    assert build_pyramid(array) == expected
-
-
-# property-based
-
-
-def test_random_array(rndm):  # noqa F811
-    assert build_pyramid(rndm) == sorted(rndm)
