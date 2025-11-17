@@ -1,4 +1,4 @@
-from sort_pack.pyramid_sort_alg import build_subroot, build_pyramid
+from sort_pack.pyramid_sort_alg import build_pyramid
 from conftest import random  # noqa F401
 import pytest
 
