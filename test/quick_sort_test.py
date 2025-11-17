@@ -1,4 +1,4 @@
-from sort_pack.quick_sort import build_subroot, build_pyramid
+from sort_pack.quick_sort import quick_sort
 from conftest import random  # noqa F401
 import pytest
 
