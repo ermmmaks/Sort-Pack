@@ -19,6 +19,3 @@ def quick_sort(array):
     array[runner + 1:] = quick_sort(array[runner + 1:])
     
     return array
-
-a = [1, 4, 3, 2]
-print(quick_sort(a))

@@ -1,5 +1,4 @@
 def merge_sort(array):
-    
     def merge(left, right):
         result = []
         i = 0
@@ -12,12 +11,12 @@ def merge_sort(array):
             else:
                 result.append(right[j])
                 j += 1
-        
+
         result.extend(left[i:])
         result.extend(right[j:])
 
         return result
-    
+
     if len(array) < 2:
         return array
 

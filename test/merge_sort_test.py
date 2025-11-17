@@ -1,4 +1,4 @@
-from sort_pack.quick_sort import build_subroot, build_pyramid
+from sort_pack.merge_sort import merge_sort
 from conftest import random  # noqa F401
 import pytest
 
@@ -9,14 +9,14 @@ test_array = [0, 9, 3, 5]
 
 
 def test_first():
-    assert quick_sort(test_array) == [0, 3, 5, 9]
+    assert m(test_array) == [0, 3, 5, 9]
 
 
 second_array = [766, 1, 9023, 63, 4248]
 
 
 def test_second():
-    assert quick_sort(second_array) != [9023, 1, 766, 4248, 63]
+    assert merge_sort(second_array) != [9023, 1, 766, 4248, 63]
 
 
 # крайние случаи
@@ -27,11 +27,11 @@ def test_second():
     [([], []), ([0], [0]), ([-1, 2, -3], [-3, -1, 2]), ([1, 2, 1], [1, 1, 2])],
 )
 def test_with_expected(array, expected):
-    assert quick_sort(array) == expected
+    assert merge_sort(array) == expected
 
 
 # property-based
 
 
 def test_random_array(rndm):  # noqa F811
-    assert quick_sort(rndm) == sorted(rndm)
+    assert merge_sort(rndm) == sorted(rndm)
